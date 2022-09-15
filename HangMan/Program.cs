@@ -26,7 +26,10 @@ namespace HangMan
             // Creates a new string where i take the word and it's length, I then loop it and append _ for each letter //
             StringBuilder display = new StringBuilder(wordToGuess.Length);
             for (int i = 0; i < wordToGuess.Length; i++)
+            {
                 display.Append('_');
+            }
+               
 
             // Creating 2 separeted list, one for correct guess and one for incorrect. I can check something in the list with the contain method
             List<char> correctGuesses = new List<char>();
@@ -44,7 +47,7 @@ namespace HangMan
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("\nGuess a Letter: ");
-                //takes the char that's sent from the players input and makes it to lowercase, I also make sure that it only takes the first index from the inpu.
+                //takes the char that's sent from the players input and makes it to lowercase, I also make sure that it only takes the first index from the input.
                 //incase the player types more than 1 chars. 
                 input = Console.ReadLine().ToLower();
                 guess = input[0];
