@@ -95,7 +95,8 @@ namespace HangMan
 
             if (won)
             {
-                Console.WriteLine("You won!");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("You found the secret word, congratulations you won!");
             }
             else
             {
