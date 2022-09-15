@@ -6,11 +6,6 @@ namespace HangMan
 {
     internal class Program
     {
-
-
-
-
-
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -33,7 +28,7 @@ namespace HangMan
             for (int i = 0; i < wordToGuess.Length; i++)
                 display.Append('_');
 
-             // Creating 2 separeted list, one for correct guess and one for incorrect. I can check something in the list with the contain method
+            // Creating 2 separeted list, one for correct guess and one for incorrect. I can check something in the list with the contain method
             List<char> correctGuesses = new List<char>();
             List<char> incorrectGuesses = new List<char>();
 
@@ -47,7 +42,7 @@ namespace HangMan
 
             while (!won && lives >= -1)
             {
-                Console.ForegroundColor = ConsoleColor.Red;               
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("\nGuess a Letter: ");
                 //takes the char that's sent from the players input and makes it to lowercase, I also make sure that it only takes the first index from the inpu.
                 //incase the player types more than 1 chars. 
@@ -56,13 +51,13 @@ namespace HangMan
 
                 // Here we have a condition to check if the guessed letter is correct or incorrect
                 if (correctGuesses.Contains(guess))
-                {                   
+                {
                     Console.WriteLine("\t '{0}', Has already been found, try another letter!", guess);
                     continue;
                 }
                 else if (incorrectGuesses.Contains(guess))
                 {
-                    Console.WriteLine("\tYou've already tried '{0}', and it was wrong!", guess);                    
+                    Console.WriteLine("\tYou've already tried '{0}', and it was wrong!", guess);
                     continue;
                 }
 
@@ -87,7 +82,7 @@ namespace HangMan
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     // adds the letter input to the list incorrectGuesses
-                    incorrectGuesses.Add(guess);                   
+                    incorrectGuesses.Add(guess);
                     Console.Clear();
                     Console.WriteLine($"\tCurrent live: {lives}", guess);
                     // decrement lives if guess is wrong
