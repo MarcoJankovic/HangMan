@@ -52,7 +52,7 @@ namespace HangMan
                 // Here we have a condition to check if the guessed letter is correct or incorrect
                 if (correctGuesses.Contains(guess))
                 {
-                    Console.WriteLine("\t\t\t '{0}', Has already been found, try another letter!", guess);
+                    Console.WriteLine("\t\t\t '{0}' Has already been found, try another letter!", guess);
                     continue;
                 }
                 else if (incorrectGuesses.Contains(guess))
