@@ -9,7 +9,7 @@ namespace HangMan
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("\t\t\t\t\t\tWelcome To HangMan!");
+            Console.WriteLine("\n\t\t\t\t\t\tWelcome To HangMan!");
 
             Random random = new Random();
 
@@ -33,14 +33,14 @@ namespace HangMan
             List<char> incorrectGuesses = new List<char>();
 
             // Deklaring lives and a bool for the while loop, also a lettersRevealed to display letters once correct.
-            int lives = 10;
+            int lives = 9;
             bool won = false;
             int lettersRevealed = 0;
 
             string? input;
             char guess;
 
-            while (!won && lives >= -1)
+            while (!won && lives >= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write("\nGuess a Letter: ");
@@ -66,6 +66,7 @@ namespace HangMan
                     // adds the letter input to the list correctGuesses
                     correctGuesses.Add(guess);
 
+                    //Logic behind the display //
                     for (int i = 0; i < wordToGuess.Length; i++)
                     {
                         if (wordToGuessLowerCase[i] == guess)
